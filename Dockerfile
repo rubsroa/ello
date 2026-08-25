@@ -10,6 +10,7 @@ COPY . .
 ARG DATABASE_URL=mysql://build:build@127.0.0.1:3306/build
 ENV DATABASE_URL=$DATABASE_URL
 ENV NEXT_TELEMETRY_DISABLED=1
+ENV NODE_OPTIONS=--max-old-space-size=1536
 RUN npx prisma generate
 RUN npm run build
 
