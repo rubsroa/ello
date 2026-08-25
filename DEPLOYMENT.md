@@ -56,6 +56,12 @@ docker compose -f docker-compose.yml -f docker-compose.prod.yml run --rm --profi
 docker compose -f docker-compose.yml -f docker-compose.prod.yml exec nginx nginx -s reload
 ```
 
+Le cron fourni exécute ce contrôle chaque jour à 03:23 UTC :
+
+```bash
+sudo install -m 0644 deploy/ello-certbot-renew.cron /etc/cron.d/ello-certbot-renew
+```
+
 ## Google Calendar
 
 Dans Google Cloud Console : créer un client OAuth Web, activer Calendar API et déclarer exactement `https://DOMAIN/api/integrations/google/callback`. Fournir `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET` et `GOOGLE_REDIRECT_URI`, puis connecter chaque membre depuis Administration → Équipe.
