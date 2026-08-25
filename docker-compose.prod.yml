@@ -1,0 +1,43 @@
+services:
+  app:
+    image: ${APP_IMAGE:-ello-app:latest}
+    build:
+      context: .
+      target: runner
+    ports: []
+    expose:
+      - "3000"
+
+  db:
+    ports: []
+
+  nginx:
+    image: nginx:1.28-alpine
+    restart: unless-stopped
+    environment:
+      DOMAIN: ${DOMAIN}
+      NGINX_ENVSUBST_FILTER: DOMAIN
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/default.conf.template:/etc/nginx/templates/default.conf.template:ro
+      - ./nginx/proxy_params:/etc/nginx/proxy_params:ro
+      - certbot_conf:/etc/letsencrypt:ro
+      - certbot_www:/var/www/certbot:ro
+    depends_on:
+      app:
+        condition: service_healthy
+    security_opt:
+      - no-new-privileges:true
+
+  certbot:
+    image: certbot/certbot:latest
+    profiles: ["certbot"]
+    volumes:
+      - certbot_conf:/etc/letsencrypt
+      - certbot_www:/var/www/certbot
+
+volumes:
+  certbot_conf:
+  certbot_www:

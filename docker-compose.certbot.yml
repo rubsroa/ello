@@ -1,0 +1,5 @@
+services:
+  nginx:
+    volumes:
+      - ./nginx/bootstrap.conf.template:/etc/nginx/templates/default.conf.template:ro
+      - ./nginx/proxy_params:/etc/nginx/proxy_params:ro

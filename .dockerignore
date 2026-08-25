@@ -1,0 +1,12 @@
+.git
+.next
+node_modules
+npm-debug.log*
+.env*
+!.env.example
+backups
+playwright-report
+test-results
+coverage
+public/uploads/*
+!public/uploads/.gitkeep
