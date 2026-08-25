@@ -86,6 +86,14 @@ Sauvegarde quotidienne :
 BACKUP_DIR=/srv/backups/ello BACKUP_RETENTION_DAYS=14 ./scripts/backup-db.sh
 ```
 
+Pour l'automatiser à 02:15 UTC avec une rétention locale de 14 jours :
+
+```bash
+sudo install -m 0644 deploy/ello-backup.cron /etc/cron.d/ello-backup
+sudo install -d -m 0700 /srv/backups/ello
+sudo /srv/ello/scripts/backup-db.sh
+```
+
 Copier ensuite le fichier chiffré vers un stockage hors VPS. Une sauvegarde n’est validée qu’après restauration sur une instance isolée :
 
 ```bash

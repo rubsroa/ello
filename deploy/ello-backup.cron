@@ -1,0 +1,5 @@
+SHELL=/bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
+# Daily local MySQL dump. Copy encrypted archives to off-site storage separately.
+15 2 * * * root BACKUP_DIR=/srv/backups/ello BACKUP_RETENTION_DAYS=14 /srv/ello/scripts/backup-db.sh >> /var/log/ello-backup.log 2>&1
