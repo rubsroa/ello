@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, MapPin } from "lucide-react";
+import { HomeHeroVideo } from "@/components/marketing/home-hero-video";
+import { SiteIntro } from "@/components/marketing/site-intro";
 
 const universes = [
   {
@@ -31,10 +33,11 @@ export default function HomePage() {
   };
   return (
     <>
+      <SiteIntro />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }} />
       <section className="relative isolate min-h-[82svh] overflow-hidden bg-night text-ivory">
         <div className="absolute inset-0">
-          <Image src="/images/hero-femme.jpg" alt="Travail de coiffure sur des cheveux longs ondulés" fill priority loading="eager" sizes="100vw" className="object-cover object-[58%_48%] opacity-55" />
+          <HomeHeroVideo />
           <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(14,37,54,.96)_0%,rgba(14,37,54,.78)_42%,rgba(14,37,54,.24)_100%)]" />
           <div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(14,37,54,.56),transparent_45%)]" />
         </div>
