@@ -45,10 +45,7 @@ export default function HomePage() {
         <div className="page-shell relative flex min-h-[82svh] items-end pb-16 pt-36 sm:pb-20 lg:items-center lg:pb-12 lg:pt-28">
           <div className="max-w-3xl">
             <p className="eyebrow text-brass">Maison de coiffure · Genève</p>
-            <h1 className="mt-6 text-balance font-display text-[clamp(3.7rem,9vw,8.5rem)] font-extralight leading-[.82] tracking-[-.055em]">
-              Votre allure,
-              <span className="mt-2 block pl-[.55em] italic">simplement.</span>
-            </h1>
+            <h1 className="sr-only">ell’o — Coiffure femme et homme à Genève</h1>
             <p className="mt-8 max-w-xl text-pretty text-base font-light leading-7 text-ivory/82 sm:text-lg sm:leading-8">
               Un salon femme et homme au cœur de Genève, où le geste, l’écoute et le temps accordé font toute la différence.
             </p>
