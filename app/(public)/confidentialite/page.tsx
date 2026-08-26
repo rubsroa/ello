@@ -3,7 +3,7 @@ import { InnerHero } from "@/components/marketing/inner-hero";
 
 export const metadata: Metadata = { title: "Politique de confidentialité", robots: { index: true, follow: true }, alternates: { canonical: "/confidentialite" } };
 const sections = [
-  ["Responsable du traitement", "ell’o — Coiffure · Genève, Rue du Midi 12, 1207 Genève. Pour toute question, contactez le salon au +41 76 385 03 40."],
+  ["Responsable du traitement", "ell’o — Coiffure · Genève, Ruelle du Midi 12, 1207 Genève. Pour toute question, contactez le salon au +41 76 385 03 40."],
   ["Données collectées", "Nous collectons uniquement les coordonnées et informations nécessaires à la prise en charge de votre rendez-vous : identité, e-mail, téléphone, prestation, horaire et notes que vous choisissez de transmettre."],
   ["Finalités", "Ces données servent à organiser, confirmer, modifier ou annuler les rendez-vous, encaisser un éventuel acompte et assurer le suivi de la relation client. Elles ne sont utilisées à des fins marketing qu’avec un consentement séparé et révocable."],
   ["Prestataires", "Certaines données strictement nécessaires peuvent être traitées par nos fournisseurs d’hébergement, d’e-mail, de calendrier et de paiement. Les données de carte bancaire sont traitées par Stripe et ne sont jamais stockées par ell’o."],

@@ -4,6 +4,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 
 export const INTRO_SEEN_KEY = "ello-intro-seen";
 export const INTRO_COMPLETE_EVENT = "ello:intro-complete";
+const INTRO_DURATION_MS = 5000;
 
 export function SiteIntro() {
   const [visible, setVisible] = useState(true);
@@ -33,6 +34,12 @@ export function SiteIntro() {
     return () => { document.body.style.overflow = previousOverflow; };
   }, [visible]);
 
+  useEffect(() => {
+    if (!visible || leaving) return;
+    const timer = window.setTimeout(dismiss, INTRO_DURATION_MS);
+    return () => window.clearTimeout(timer);
+  }, [dismiss, leaving, visible]);
+
   useEffect(() => () => {
     if (hideTimer.current !== null) window.clearTimeout(hideTimer.current);
   }, []);
@@ -44,17 +51,17 @@ export function SiteIntro() {
       aria-label="Introduction ell’o"
       className={`fixed inset-0 z-[100] grid place-items-center bg-night transition-opacity duration-700 ${leaving ? "pointer-events-none opacity-0" : "opacity-100"}`}
     >
-      <video
-        autoPlay
-        muted
-        playsInline
-        preload="auto"
-        onEnded={dismiss}
-        onError={dismiss}
-        className="h-full w-full object-contain"
-      >
-        <source src="/videos/ello-intro.mp4" type="video/mp4" />
-      </video>
+      <picture className="absolute inset-0 block h-full w-full">
+        <source media="(max-width: 767px)" srcSet="/animations/ello-intro-mobile-1080x1920.svg" type="image/svg+xml" />
+        <source media="(max-width: 1279px)" srcSet="/animations/ello-intro-tablette-1536x2048.svg" type="image/svg+xml" />
+        <img
+          src="/animations/ello-intro-pc-1920x1080.svg"
+          alt=""
+          aria-hidden="true"
+          onError={dismiss}
+          className="h-full w-full object-cover"
+        />
+      </picture>
       <button
         type="button"
         onClick={dismiss}

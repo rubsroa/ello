@@ -14,7 +14,7 @@ type BookingTemplateData = {
 const escapeHtml = (value: string) => value.replace(/[&<>'"]/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;" })[char] ?? char);
 
 function shell(content: string) {
-  return `<!doctype html><html lang="fr"><body style="margin:0;background:#F4F1EA;color:#0E2536;font-family:Arial,sans-serif"><div style="max-width:620px;margin:0 auto;padding:40px 24px"><div style="font-size:38px;font-weight:300;letter-spacing:-2px">ell’o</div><div style="margin-top:4px;font-size:10px;letter-spacing:3px;text-transform:uppercase">Coiffure · Genève</div><div style="margin-top:36px;background:#fff;padding:32px">${content}</div><p style="margin-top:28px;font-size:12px;line-height:20px;color:#53616b">Rue du Midi 12 · 1207 Genève · +41 76 385 03 40</p></div></body></html>`;
+  return `<!doctype html><html lang="fr"><body style="margin:0;background:#F4F1EA;color:#0E2536;font-family:Arial,sans-serif"><div style="max-width:620px;margin:0 auto;padding:40px 24px"><div style="font-size:38px;font-weight:300;letter-spacing:-2px">ell’o</div><div style="margin-top:4px;font-size:10px;letter-spacing:3px;text-transform:uppercase">Coiffure · Genève</div><div style="margin-top:36px;background:#fff;padding:32px">${content}</div><p style="margin-top:28px;font-size:12px;line-height:20px;color:#53616b">Ruelle du Midi 12 · 1207 Genève · +41 76 385 03 40</p></div></body></html>`;
 }
 
 export function confirmationTemplate(data: BookingTemplateData) {

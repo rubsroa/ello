@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080">
+  <style>
+    @keyframes elloLetter { from { opacity: 0; transform: translateY(.34em) scale(.96); filter: blur(6px); } to { opacity: 1; transform: none; filter: blur(0); } }
+    @keyframes elloRule { from { transform: scaleX(0); opacity: 0; } 40% { opacity: 1; } to { transform: scaleX(1); opacity: 1; } }
+    @keyframes elloTag { from { opacity: 0; letter-spacing: .9em; } to { opacity: .78; letter-spacing: .34em; } }
+    @keyframes elloGlow { 0%, 100% { opacity: 0; } 55% { opacity: .5; } }
+    @keyframes elloExit { from { opacity: 1; clip-path: inset(0 0 0 0); } to { opacity: 0; clip-path: inset(0 0 100% 0); } }
+    .veil { animation: elloExit .95s cubic-bezier(.7, 0, .3, 1) 4.05s both; }
+    .glow { animation: elloGlow 3.1s ease-in-out .45s both; }
+    .l { opacity: 0; animation: elloLetter 1s cubic-bezier(.2, .75, .25, 1) both; transform-box: fill-box; transform-origin: center; }
+    .rule { opacity: 0; animation: elloRule 1.1s cubic-bezier(.22, .7, .2, 1) 1.15s both; transform-box: fill-box; transform-origin: center; }
+    .tag { opacity: 0; animation: elloTag 1.4s cubic-bezier(.22, .7, .2, 1) 1.55s both; }
+  </style>
+  <defs><radialGradient id="g"><stop offset="0" stop-color="#B79457" stop-opacity=".34"/><stop offset=".64" stop-color="#B79457" stop-opacity="0"/></radialGradient></defs>
+  <g class="veil">
+    <rect width="1920" height="1080" fill="#0E2536"/>
+    <circle class="glow" cx="960" cy="540" r="520" fill="url(#g)"/>
+    <text class="l" style="animation-delay:.35s" x="822.7" y="532.2" font-size="156" font-family="Jost,Futura,'Century Gothic','Avenir Next',sans-serif" font-weight="300" fill="#F4F1EA" text-anchor="middle">e</text><text class="l" style="animation-delay:.47s" x="891.4" y="532.2" font-size="156" font-family="Jost,Futura,'Century Gothic','Avenir Next',sans-serif" font-weight="300" fill="#F4F1EA" text-anchor="middle">l</text><text class="l" style="animation-delay:.59s" x="960" y="532.2" font-size="156" font-family="Jost,Futura,'Century Gothic','Avenir Next',sans-serif" font-weight="300" fill="#F4F1EA" text-anchor="middle">l</text><text class="l" style="animation-delay:.71s" x="1028.6" y="532.2" font-size="156" font-family="Jost,Futura,'Century Gothic','Avenir Next',sans-serif" font-weight="300" fill="#F4F1EA" text-anchor="middle">’</text><text class="l" style="animation-delay:.83s" x="1097.3" y="532.2" font-size="156" font-family="Jost,Futura,'Century Gothic','Avenir Next',sans-serif" font-weight="300" fill="#F4F1EA" text-anchor="middle">o</text>
+    <rect class="rule" x="848.2" y="569.9" width="223.6" height="1.56" fill="#F4F1EA"/>
+    <text class="tag" x="960" y="618" font-size="27.3" font-family="Jost,Futura,'Century Gothic','Avenir Next',sans-serif" font-weight="400" fill="#F4F1EA" letter-spacing="9.28" text-anchor="middle">COIFFURE · GENÈVE</text>
+  </g>
+</svg>

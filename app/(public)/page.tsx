@@ -28,7 +28,7 @@ export default function HomePage() {
     name: "ell’o — Coiffure · Genève",
     telephone: "+41763850340",
     url: process.env.APP_URL ?? "http://localhost:3000",
-    address: { "@type": "PostalAddress", streetAddress: "Rue du Midi 12", postalCode: "1207", addressLocality: "Genève", addressCountry: "CH" },
+    address: { "@type": "PostalAddress", streetAddress: "Ruelle du Midi 12", postalCode: "1207", addressLocality: "Genève", addressCountry: "CH" },
     priceRange: "CHF",
   };
   return (
@@ -57,7 +57,7 @@ export default function HomePage() {
         </div>
 
         <div className="absolute bottom-7 right-6 hidden items-center gap-2 text-xs font-normal uppercase tracking-[.18em] text-ivory/70 lg:flex">
-          <MapPin aria-hidden="true" size={15} /> Rue du Midi 12, Genève
+          <MapPin aria-hidden="true" size={15} /> Ruelle du Midi 12, Genève
         </div>
       </section>
 
@@ -102,7 +102,7 @@ export default function HomePage() {
               À deux pas du lac, ell’o accueille femmes et hommes dans un espace intime. Nos rendez-vous laissent la place au diagnostic, au conseil et à une réalisation sans précipitation.
             </p>
             <div className="mt-10 grid gap-6 border-t border-ivory/15 pt-8 text-sm sm:grid-cols-2">
-              <div><p className="eyebrow text-brass">Adresse</p><address className="mt-3 not-italic font-light leading-6 text-ivory/80">Rue du Midi 12<br />1207 Genève, Suisse</address></div>
+              <div><p className="eyebrow text-brass">Adresse</p><address className="mt-3 not-italic font-light leading-6 text-ivory/80">Ruelle du Midi 12<br />1207 Genève, Suisse</address></div>
               <div><p className="eyebrow text-brass">Contact</p><a className="mt-3 inline-block font-light text-ivory/80 underline-offset-4 hover:underline" href="tel:+41763850340">+41 76 385 03 40</a></div>
             </div>
           </div>
