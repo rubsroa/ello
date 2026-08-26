@@ -79,7 +79,6 @@ test("admin : connexion, création de prestation et planning", async ({ page }) 
   await page.getByRole("link", { name: "Nouveau rendez-vous" }).click();
   await page.getByRole("button", { name: "Lui", exact: true }).click();
   await page.getByRole("button", { name: /Coupe homme/ }).click();
-  await page.getByRole("button", { name: /Premier disponible/ }).click();
   await page.getByLabel("Choisir une date").fill(nextWeekday(3));
   const slot = page.locator("button").filter({ hasText: /^\d{2}:\d{2}/ }).first();
   await expect(slot).toBeVisible();

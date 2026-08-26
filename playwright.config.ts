@@ -25,6 +25,12 @@ export default defineConfig({
   use: { baseURL, trace: "retain-on-failure", screenshot: "only-on-failure" },
   projects: [
     { name: "desktop-chromium", use: { ...devices["Desktop Chrome"] } },
-    { name: "mobile-chromium", use: { ...devices["iPhone 13"], browserName: "chromium" }, testIgnore: /admin\.spec\.ts/ },
+    { name: "desktop-firefox", use: { ...devices["Desktop Firefox"] }, testIgnore: /admin\.spec\.ts/ },
+    { name: "mobile-android", use: { ...devices["Pixel 7"] }, testIgnore: /admin\.spec\.ts/ },
+    { name: "mobile-webkit", use: { ...devices["iPhone 13"] }, testIgnore: /admin\.spec\.ts/ },
+    { name: "mobile-small-webkit", use: { ...devices["iPhone SE"] }, testMatch: /responsive\.spec\.ts/ },
+    { name: "mobile-android-landscape", use: { ...devices["Pixel 7 landscape"] }, testMatch: /responsive\.spec\.ts/ },
+    { name: "mobile-webkit-landscape", use: { ...devices["iPhone 13 landscape"] }, testMatch: /responsive\.spec\.ts/ },
+    { name: "tablet-webkit", use: { ...devices["iPad Pro 11"] }, testIgnore: /admin\.spec\.ts/ },
   ],
 });

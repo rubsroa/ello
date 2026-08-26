@@ -32,7 +32,7 @@ export async function ServicesList({ audience }: { audience: "FEMALE" | "MALE" }
                 </div>
                 <div className="flex items-center justify-between gap-8 sm:justify-end">
                   <p className="font-display text-xl font-light">{formatChf(service.priceCents)}</p>
-                  <Link href={`/reservation?service=${service.id}`} className="inline-flex items-center gap-2 text-xs font-normal uppercase tracking-[.14em] underline-offset-4 hover:underline">Choisir <ArrowRight size={15} aria-hidden="true" /></Link>
+                  <Link href={`/reservation?service=${service.id}`} className="inline-flex min-h-11 items-center gap-2 text-xs font-normal uppercase tracking-[.14em] underline-offset-4 hover:underline">Choisir <ArrowRight size={15} aria-hidden="true" /></Link>
                 </div>
               </article>
             ))}

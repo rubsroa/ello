@@ -26,7 +26,6 @@ test("client : visite, prestation, réservation et confirmation", async ({ page 
   await page.goto("/reservation");
   await page.getByRole("button", { name: "Lui", exact: true }).click();
   await page.getByRole("button", { name: /Coupe homme/ }).click();
-  await page.getByRole("button", { name: /Premier disponible/ }).click();
 
   const nextWednesday = nextWeekday(3);
   await page.getByLabel("Choisir une date").fill(nextWednesday);

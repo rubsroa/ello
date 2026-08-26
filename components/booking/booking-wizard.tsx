@@ -116,7 +116,7 @@ export function BookingWizard({
 
         {step === 6 && <div className="mt-8 border border-brass/40 bg-white p-7 sm:p-10"><Check className="text-brass" size={32} /><h3 className="mt-5 font-display text-3xl font-light">Votre rendez-vous est confirmé.</h3><p className="mt-4 text-night/65">Référence <strong className="font-normal text-night">{reference}</strong>. Les détails vous sont envoyés par e-mail.</p></div>}
 
-        {step > 1 && step < 6 && <button type="button" onClick={() => setStep((current) => Math.max(1, current - 1))} className="mt-10 inline-flex items-center gap-2 text-xs font-normal uppercase tracking-[.14em]"><ChevronLeft size={15} /> Retour</button>}
+        {step > 1 && step < 6 && <button type="button" onClick={() => setStep((current) => Math.max(1, current - 1))} className="mt-10 inline-flex min-h-11 items-center gap-2 text-xs font-normal uppercase tracking-[.14em]"><ChevronLeft size={15} /> Retour</button>}
       </div>
 
       <aside className="h-fit border border-night/15 bg-white p-6 lg:sticky lg:top-8" aria-label="Récapitulatif">
