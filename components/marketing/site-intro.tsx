@@ -51,17 +51,18 @@ export function SiteIntro() {
       aria-label="Introduction ell’o"
       className={`fixed inset-0 z-[100] grid place-items-center bg-night transition-opacity duration-700 ${leaving ? "pointer-events-none opacity-0" : "opacity-100"}`}
     >
-      <picture className="absolute inset-0 block h-full w-full">
-        <source media="(max-width: 767px)" srcSet="/animations/ello-intro-mobile-1080x1920.svg" type="image/svg+xml" />
-        <source media="(max-width: 1279px)" srcSet="/animations/ello-intro-tablette-1536x2048.svg" type="image/svg+xml" />
-        <img
-          src="/animations/ello-intro-pc-1920x1080.svg"
-          alt=""
-          aria-hidden="true"
-          onError={dismiss}
-          className="h-full w-full object-cover"
-        />
-      </picture>
+      <div className="intro-veil absolute inset-0 grid place-items-center overflow-hidden bg-night" aria-hidden="true">
+        <div className="intro-glow absolute left-1/2 top-1/2 size-[min(82vw,44rem)] -translate-x-1/2 -translate-y-1/2 rounded-full" />
+        <div className="intro-lockup relative flex flex-col items-center">
+          <div className="intro-wordmark flex items-baseline" aria-label="ell’o">
+            {["e", "l", "l", "’", "o"].map((letter, index) => (
+              <span key={`${letter}-${index}`} className="intro-letter" style={{ animationDelay: `${0.35 + index * 0.12}s` }}>{letter}</span>
+            ))}
+          </div>
+          <span className="intro-rule" />
+          <span className="intro-tagline">Coiffure · Genève</span>
+        </div>
+      </div>
       <button
         type="button"
         onClick={dismiss}
